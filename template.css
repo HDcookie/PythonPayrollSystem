@@ -1,0 +1,93 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+}
+
+:root {
+    --background: rgba(207, 235, 186, 1);
+}
+
+input {
+    background-color: var(--background);
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+label {
+    cursor: pointer;
+}
+.check-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid black;
+    width: 100%;
+    height: 250px;
+    background-color: var(--background);
+}
+.check-container__header-banner,
+.check-container__payto,
+.check-container__dollar-word,
+.check-container__footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.check-container__name-address {
+    display: flex;
+    flex-direction: column;
+}
+#date-input::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.check-container__order {
+    display: flex;
+    flex: 1;
+}
+.check-container__dollar-border {
+    border: 1px solid black;
+    padding: 8px;
+}
+#name-payto {
+    padding: 5px;
+    font-size: 16px;
+    margin-bottom: 0px;
+    border: none;
+}
+.check-container__payto-desc {
+    width: 90px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.check-container__dollar-word,
+.check-container__memo,
+.check-container__signature,
+.check-container__order {
+    border-bottom: 1px solid black;
+}
+
+.check-container__memo {
+    display: flex;
+    flex: 2;
+}
+.check-container__signature-word,
+.check-container__memo-word {
+    margin-left: 8px;
+    border: none;
+    margin-bottom: 0px;
+}
+
+.check-container__signature {
+    display: flex;
+    flex: 3;
+    margin-left: 20%;
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "Employee ID": "123456",
+        "Employee Name": "Bob Vance",
+        "Hours Worked": 0,
+        "Pay Rate": 1234.0,
+        "Date": "04/01/24"
+    },
+    {
+        "Employee ID": "639991",
+        "Employee Name": "Jeffrey Davidson",
+        "Hours Worked": 0,
+        "Pay Rate": 2.0,
+        "Date": "04/01/24"
+    },
+    {
+        "Employee ID": "792432",
+        "Employee Name": "Jane Doe",
+        "Hours Worked": 0,
+        "Pay Rate": 32.0,
+        "Date": "04/01/24"
+    },
+    {
+        "Employee ID": "765432",
+        "Employee Name": "gas fdas",
+        "Hours Worked": 0,
+        "Pay Rate": 87.0,
+        "Date": "04/01/24"
+    },
+    {
+        "Employee ID": "567892",
+        "Employee Name": "kjash asdnb",
+        "Hours Worked": 0,
+        "Pay Rate": 56.0,
+        "Date": "04/01/24"
+    }
+]
