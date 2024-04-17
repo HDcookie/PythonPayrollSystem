@@ -5,14 +5,16 @@ def main():
     print("1. Timeclock")
     print("2. Payroll")
     choice = input("Enter your choice: ")
-    if choice == "1":
-        import timecard
-        timecard.menu()
-    elif choice == "2":
-        import payroll_Main
-        payroll_Main.menu()
-    else:
-        print("Invalid choice.  Please enter 1 or 2")
+    while True:
+        if choice == "1":
+            import timecard
+            timecard.menu()
+        elif choice == "2":
+            import payroll_Main
+            payroll_Main.menu()
+        else:
+            print("Invalid choice.  Please enter 1 or 2")
+
 
 
 

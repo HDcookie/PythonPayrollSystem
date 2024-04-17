@@ -101,6 +101,8 @@ def menu():
             clockin()
         elif choice == "2":
             clock_out()
+        elif choice == "q":
+            break
         else:
             print("Invalid choice.")
 

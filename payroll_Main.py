@@ -116,15 +116,32 @@ def payRoll():
 
 def menu():
     print("Welcome to the New Payroll System")
-    answer = input("Process Payroll or create check? (p for payroll, c for check): ")
+    answer = input("Process Payroll or create check? (p to add employee, c for checks, r to remove): ")
     if answer == 'p':
         payRoll()
     elif answer == 'c':
         checkstub()
+    elif answer == 'r':
+        removeUser()
     else:
         print("Invalid option")
         return
 
+def removeUser():
+    id = input("Enter the employee ID to remove: ")
+    data = []
+    with open("payroll.json", "r") as file:
+        data = json.load(file)
+        for i in range(len(data)):
+            if data[i]["Employee ID"] == id:
+                del data[i]
+                break
+
+    with open("payroll.json", "w") as file:
+        json.dump(data, file, indent=4)
+    print("Employee removed")
+
+    return
 
 def calculate_pay(data):
     # Calculate the pay per employee, and return the correct data, with net pay, taxes, etc.
