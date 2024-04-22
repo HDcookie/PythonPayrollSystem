@@ -115,17 +115,22 @@ def payRoll():
 
 
 def menu():
-    print("Welcome to the New Payroll System")
-    answer = input("Process Payroll or create check? (p to add employee, c for checks, r to remove): ")
-    if answer == 'p':
-        payRoll()
-    elif answer == 'c':
-        checkstub()
-    elif answer == 'r':
-        removeUser()
-    else:
-        print("Invalid option")
-        return
+    while True:
+        print("")
+        print("")
+        print("Welcome to the New Payroll System")
+        answer = input("Process Payroll or create check? (p to add employee, c for checks, r to remove, q to exit): ")
+        if answer == 'p':
+            payRoll()
+        elif answer == 'c':
+            checkstub()
+        elif answer == 'r':
+            removeUser()
+        elif answer == 'q':
+            break
+        else:
+            print("Invalid option")
+
 
 def removeUser():
     id = input("Enter the employee ID to remove: ")

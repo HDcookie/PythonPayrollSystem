@@ -14,11 +14,15 @@ def clockin():
     id = input("> ")
 
     if (id in employees_clocked_in):
+        print("")
+        print("")
         print("You are already clocked in.")
         return
 
     # checks if the employee ID is valid, if not, it will return an error
     if id not in employeeIds:
+        print("")
+        print("")
         print("Invalid employee ID.")
         return
 
@@ -34,6 +38,8 @@ def clock_out():
     id = input("> ")
 
     if id not in employees_clocked_in:
+        print("")
+        print("")
         print("You are not clocked in.")
         return
 
@@ -44,8 +50,17 @@ def clock_out():
     clocked_in_time = employees_clocked_in[id]
     clocked_out_time = datetime.now()
     hours_worked = clocked_out_time - clocked_in_time
-    print("You worked for", hours_worked)
     employees_clocked_in.pop(id)
+
+    # format the hours worked to be in hours, minutes, seconds
+    total_seconds = hours_worked.total_seconds()
+    # get hours, remainder = total seconds
+    hours, remainder = divmod(total_seconds, 3600)
+    # get minutes from remainder, remainder = remaining seconds
+    minutes, seconds = divmod(remainder, 60)
+
+    print(f"You worked: {hours} hours, {minutes} minutes, {seconds} seconds")
+
 
     save_timecard(id, hours_worked)
 
@@ -74,8 +89,7 @@ def save_timecard(id, hours_worked):
             if employee["Employee ID"] == id:
                 # convert the hours worked to a float
                 employee["Hours Worked"] = previous_hours + hours_worked.total_seconds() / 3600
-                print("Hours worked from json: ", employee["Hours Worked"])
-                print("Hours worked: ", hours_worked.total_seconds() / 3600)
+                print("Total Hours worked: ", hours_worked.total_seconds() / 3600)
                 break
         json.dump(data, file)
 
@@ -87,6 +101,9 @@ def menu():
         data = json.load(file)
         for employee in data:
             employeeIds.append(employee["Employee ID"])
+
+    for i in range(100):
+        print(" ")
 
     while True:
 
@@ -104,6 +121,8 @@ def menu():
         elif choice == "q":
             break
         else:
+            print("")
+            print("")
             print("Invalid choice.")
 
 

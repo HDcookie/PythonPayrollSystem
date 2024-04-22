@@ -1,7 +1,7 @@
 from jinja2 import FileSystemLoader, Environment
 import json
 
-from NewPayrollSystem.payroll_Main import today
+from payroll_Main import today
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
